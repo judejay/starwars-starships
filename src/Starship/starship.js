@@ -1,14 +1,14 @@
 
 import { Wrapper } from './starship.styles';
-
-//import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import { red } from '@mui/material/colors';
 import React from 'react'
 
 const Starship = ({ship, maxFilms}) => {
     return (
         <Wrapper>
     <img src ={process.env.PUBLIC_URL + `/images/${ship.name}.jpg` }  alt={ship.name}/>
-    {(maxFilms === ship.films.length) ? <h1> LONGEST</h1> : null}
+    {(maxFilms === ship.films.length) ? <EmojiEventsIcon style={{fill: "gold"}}/> : null}
 
 
             <h3>Name: {ship.name}</h3>
