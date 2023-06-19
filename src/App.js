@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { LinearProgress } from "@mui/material";
+import Grid from "@mui/material";
+import { Wrapper } from "./App.styles";
+import { useEffect, useState } from "react";
 
-function App() {
-  return (
+
+
+const App = () => {
+   const [ starships, setStarships ] = useState([])
+
+  const getStarships =  () => {
+    fetch('https://swapi.dev/api/starships/')
+    .then(response => {
+     return response.json()
+    })
+    .then(data => {
+     setStarships(data.results)
+    }) 
+ }
+ 
+ useEffect(() => {
+  getStarships()
+ }, []);
+
+
+ return (  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {starships.length >0 && (
+        <ul>
+         {starships.map(ship => (
+            <li key={ship.name} >{ship.name} </li>
+         ))}
+          
+        </ul>
+      )}
     </div>
   );
 }
