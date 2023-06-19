@@ -3,15 +3,15 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     border: 1px solid lightblue;
     border-radius: 20px;
     height: 100%;
 
     img {
-        max-height: 250px;
-        object-fit: cover;
+        max-height: 100px;
+        object-fit: fit;
         border-radius: 20px 20px 0 0 ;
     }
 

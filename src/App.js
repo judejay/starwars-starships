@@ -22,7 +22,7 @@ const App = () => {
             longestFilms.push(ship);
         }
     });
-    console.log("app" ,longest);
+   // console.log("app" ,longest);
     setMaxFilms(longest) ;
     return longest;
 }
