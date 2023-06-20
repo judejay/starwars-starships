@@ -13,8 +13,13 @@ background-height: 100vh;
   -o-background-size: cover;
   background-size: cover;
 margin: auto;
+margin-top: -10px;
+margin-left: -8px;
+
+
 text-align: center;
    button {
+    margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
     color: primary;
