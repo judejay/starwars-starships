@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-
 export const Wrapper = styled.div`
+
     margin: 10px;
     display: flex;
     justify-content: space-between;

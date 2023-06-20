@@ -4,7 +4,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Wrapper } from './starship.styles';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import React from 'react'
+import React from 'react';
+
 const Starship = ({ship, maxFilms}) => {
     return (
         <Wrapper>
@@ -22,9 +23,10 @@ const Starship = ({ship, maxFilms}) => {
           <Typography variant="body2" color="text.secondary">
           <p>Model: {ship.model}</p>
             <p>Films: {ship.films.length}</p>
+            {ship.manufacturer.includes("Sienar") ? <p>Empire</p> : <p>Rebels</p>}
           </Typography>
-        </CardContent>          
-        </Card>      
+        </CardContent>                
+        </Card>
     </Wrapper>
 )
 

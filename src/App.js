@@ -1,4 +1,4 @@
-import { LinearProgress } from "@mui/material";
+import LinearProgress from '@mui/material/LinearProgress';
 import Grid from "@material-ui/core/Grid";
 import { Wrapper } from "./App.styles";
 import {  useState } from "react";
@@ -9,9 +9,9 @@ import Starship from "./Starship/starship";
 const App = () => {
    const [ starships, setStarships ] = useState([])
    const [ maxFilms, setMaxFilms ] = useState(0)
+   const [isLoading, setIsLoading] = useState(false)
    var longestFilms = [];
    var longest = 0;
-
    const getMostFilms = (ships) => {
     ships.forEach(function(ship) {
         if (ship?.films?.length > longest) {
@@ -28,6 +28,7 @@ const App = () => {
 
 
   const getStarships =  () => {
+    setIsLoading(true)
     fetch('https://swapi.dev/api/starships/')
     .then(response => {
      return response.json()
@@ -44,10 +45,12 @@ const App = () => {
     })    
     .then(smallShips =>{
       getMostFilms(smallShips)
+       setIsLoading(false);
       return setStarships(smallShips)
     })
   
  }
+ if (isLoading) return <LinearProgress />;
 
  return (  
     <Wrapper>
