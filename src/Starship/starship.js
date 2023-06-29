@@ -25,6 +25,14 @@ const Starship = ({ship, maxFilms}) => {
             <p>Films: {ship.films.length}</p>
             {ship.manufacturer.includes("Sienar") ? <p>Empire</p> : <p>Rebels</p>}
           </Typography>
+          {/*TODO HAha refactor to props of styled components 
+          */}
+          <CardMedia
+          component="img"
+          height="140"
+          image={process.env.PUBLIC_URL + `/images/dark.jpg` }
+          alt="dark"
+        />
         </CardContent>                
         </Card>
     </Wrapper>
