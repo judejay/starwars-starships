@@ -23,15 +23,15 @@ const Starship = ({ship, maxFilms}) => {
           <Typography variant="body2" color="text.secondary">
           <p>Model: {ship.model}</p>
             <p>Films: {ship.films.length}</p>
-            {ship.manufacturer.includes("Sienar") ? <p>Empire</p> : <p>Rebels</p>}
           </Typography>
           {/*TODO HAha refactor to props of styled components 
           */}
           <CardMedia
           component="img"
-          height="140"
-          image={process.env.PUBLIC_URL + `/images/dark.jpg` }
-          alt="dark"
+          object-fit="fill"
+          height="auto"
+          image={ship.manufacturer.includes("Sienar") ? process.env.PUBLIC_URL + `/images/dark.jpg`: process.env.PUBLIC_URL + `/images/rebel.svg`}
+          alt="group affiliation"
         />
         </CardContent>                
         </Card>
