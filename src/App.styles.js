@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 background: url(${stars}) no-repeat center center fixed;
 background-size: 100%;
 width: 100vw;
-height: 200vh;
+height: 400vh;
 background-width: auto;
 background-height: 100vh;
 -webkit-background-size: cover;

@@ -7,8 +7,10 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import React from 'react';
 
 const Starship = ({ship, maxFilms}) => {
-    return (
-        <Wrapper>
+  //const affiliation = ship.manufacturer.includes("Sienar") ? "Empire": "Rebel"
+const affiliation = ship.manufacturer.includes("Sienar") ? process.env.PUBLIC_URL + `/images/dark.jpg`: process.env.PUBLIC_URL + `/images/rebel.svg`
+  return (
+        <Wrapper side={affiliation}>
              <Card sx={{ maxWidth: 345 , minHeight: 440}}>
              <CardMedia
           component="img"
@@ -30,7 +32,7 @@ const Starship = ({ship, maxFilms}) => {
           component="img"
           object-fit="fill"
           height="auto"
-          image={ship.manufacturer.includes("Sienar") ? process.env.PUBLIC_URL + `/images/dark.jpg`: process.env.PUBLIC_URL + `/images/rebel.svg`}
+          image={affiliation}
           alt="group affiliation"
         />
         </CardContent>                
